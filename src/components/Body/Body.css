@@ -1,0 +1,29 @@
+.body-container {
+  overflow: hidden;
+  flex: 1; 
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping */
+ 
+}
+
+.flex-item {
+  flex: 1; /* Flexible to grow and shrink equally */
+  min-width: 200px; /* Minimum width */
+  margin: 10px;
+  background-color: #ccc;
+  text-align: center;
+}
+
+.body-container p {
+  font-size: 24px;
+  
+  
+
+}
+
+@media screen and (max-width: 600px) {
+  .flex-item {
+    flex-basis: 100%; /* Force item to take full width */
+  }
+}
+

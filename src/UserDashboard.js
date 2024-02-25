@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './sidebar.css';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-const Education = () => {
+const UserDashboard = () => {
  
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,4 +29,4 @@ const Education = () => {
   );
 }
 
-export default Education;
+export default UserDashboard;

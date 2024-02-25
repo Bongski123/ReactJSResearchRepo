@@ -1,0 +1,8 @@
+.search-result{
+    padding: 10px 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.search-result:hover{
+ background-color: #66a756;
+}

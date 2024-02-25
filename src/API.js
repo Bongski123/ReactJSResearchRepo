@@ -28,7 +28,7 @@ function API(){
     },[])
 
     const fetchPosts = async () => {
-        await axios.get('https://nodejs-mysql-api-almario-ylza.onrender.com/api/users').then(({data})=>{
+        await axios.get('http://127.0.0.1:9000/api/users').then(({data})=>{
             setPosts(data)
 
         })
@@ -42,7 +42,7 @@ function API(){
   return (
     <div>
 
-<Table Table striped bordered hover size="md">
+<Table Table striped bordered hover size="xl">
       <thead>
         <tr>
         

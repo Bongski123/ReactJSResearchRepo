@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  
+
 }
 
 .App-logo {
@@ -14,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #0f083c;
+  background-color: #4e36ef;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +24,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(37, 255, 13);
+  
 }
 
 .App-link {
@@ -36,21 +39,106 @@
     transform: rotate(360deg);
   }
 }
-.background-container {
-  background-image: url('./parralax.jpg'); 
-  background-size: cover; /* Cover the entire container */
-  background-position: center; /* Center the background image */
-  height: 100vh; /* Adjust height as needed */
-  background-color: rgb(9, 98, 29);
-  /* Add any other styling you need for your component */
+
+
+
+
+.labelSearach{
+  background-color: #c809ee;
+  width: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
 }
-.navbar {
+.carouselpics{
+  width: 800;
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+ 
+}
+.info{
+  
+  width: 900;
+   font-family: 'Canela';
+    text-wrap: stable;
+    text-align: justify;
+    text-transform: initial;
 
-  background-color: #611e1e;
-  padding: 5px;
+  
+ text-align: calc();
+  font-size: calc(13px + 0vmin);
+
+  height: 39vh; /* Optionally, to center vertically */
+  
+
+}
+h3
+{
+  font-family: 'Canela';
+    text-transform: none;
 }
 
-.contact{
-  color:aquaS;
 
+
+.form-control{
+ 
+  margin: 0%;/* Center the container horizontally */
+  height: auto;
+  border: none;
+  border-radius:5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(4px + 1vmin);
+  font-size: 1.25rem;
+
+}
+ .input{
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+    margin-left: 5px;
+}
+
+
+
+
+.buttonUpload{
+  color: #4e36ef;
+  border: #d31111;
+
+}
+.uploadTitle{
+  color: rgb(21, 141, 137);
+}
+.Home{
+  background-color: transparent;
+  height: 70vh;
+  width: 80vw;
+}
+.searchbar-container{
+  padding-top: 10vh ;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping */
+}
+
+.flex-item {
+  flex: 1; /* Flexible to grow and shrink equally */
+  min-width: 200px; /* Minimum width */
+  margin: 10px;
+  background-color: #ccc;
+  text-align: center;
 }

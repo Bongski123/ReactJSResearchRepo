@@ -1,26 +1,19 @@
-import * as React from 'react';
+import "./styles.css";
+import { Title } from "../components/Title/Title";
+import { Body } from "../components/Body/Body";
+
 import axios from 'axios';
+import Alert from 'react-bootstrap/Alert';
+import { Button } from 'semantic-ui-react'
+import Carousel from 'react-bootstrap/Carousel';
 import { useState, useEffect } from 'react';
-import {map} from 'react';
-import{BrowserRouter as Router, Routes,Route, Link} from "react-router-dom";
-import  Navbar from 'react-bootstrap/Navbar';
-import Container  from 'react-bootstrap/Container';
-import Row from "react-bootstrap/Row";
-import Col from 'react-bootstrap/Col';
-import "bootstrap/dist/css/bootstrap.css";
-import Nav from "react-bootstrap/Nav";
-import logo from './logo.svg';
-import './App.css';
 import  Table  from 'react-bootstrap/Table';
-import App from './App';
-import Button from 'react-bootstrap/Button';
 
 
 
 
 
-function Users(){
-
+const API = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(()=>{
@@ -28,7 +21,7 @@ function Users(){
     },[])
 
     const fetchPosts = async () => {
-        await axios.get('https://nodejs-mysql-api-almario-ylza.onrender.com/api/users').then(({data})=>{
+        await axios.get('http://127.0.0.1:9000/api/users').then(({data})=>{
             setPosts(data)
 
         })
@@ -38,11 +31,13 @@ function Users(){
 
 
 
-
   return (
-    <div>
-
-<Table Table striped bordered hover size="md">
+    <div className="page upload">
+     <h1>User List</h1>
+      <Body>
+      <div className="userlist-table"  >
+     
+      <Table Table striped bordered hover size="md">
       <thead>
         <tr>
         
@@ -75,13 +70,11 @@ function Users(){
     ))}
       </tbody>
       </Table>
+        </div>
 
-        
-    
+      </Body>
     </div>
   );
-}
+};
 
-
-
-export default Users;
+export default API;
