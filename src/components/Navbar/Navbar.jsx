@@ -29,6 +29,9 @@ export const Navbar = () => {
         <li>
           <Link to="/publicationlist">Publication</Link>
         </li>
+        <li>
+          <Link to="/register">Sign up</Link>
+        </li>
       </ul>
       
 
