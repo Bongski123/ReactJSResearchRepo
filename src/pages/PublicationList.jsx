@@ -32,7 +32,7 @@ const PublicationList = () => {
 
 
   return (
-    <div className="publication page">
+    <div className="page publication">
       <Title>Publication</Title>
       <Body>
       <div className="publication-form" >

@@ -8,9 +8,10 @@ import { SearchResultList } from '../components/SearchResultList';
 const Home = () => {
     const [results,setResults] = useState([]);
   return (
-    <div className="page home">
+    
+    <div className="page home"  >
       <Title>NCF Research Nexus</Title>
-      <Body>
+     
       <div className="Home">
     <div className="searchbar-container">
     <SearchBar setResults ={setResults}/>
@@ -18,7 +19,6 @@ const Home = () => {
   </div>
   </div>
 
-      </Body>
     </div>
   );
 };

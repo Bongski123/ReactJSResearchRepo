@@ -32,8 +32,8 @@ const API = () => {
 
 
   return (
-    <div className="page upload">
-     <h1>User List</h1>
+    <div className="page API">
+     <Title>User List</Title>
       <Body>
       <div className="userlist-table"  >
      

@@ -5,6 +5,10 @@
   right: 0; /* Align to the right side of the screen */
   z-index: 100;
   background-color: transparent;
+  flex: 1;
+
+
+  
 }
 
 .navbar ul {
@@ -13,11 +17,18 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  gap: 50px;
+  gap: 40px;
 }
 
 .navbar a {
   text-decoration: none;
-  color: rgb(88, 43, 43);
+  color: rgb(0, 0, 0);
   font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
 }

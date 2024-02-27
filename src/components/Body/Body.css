@@ -3,6 +3,11 @@
   flex: 1; 
   display: flex;
   flex-wrap: wrap; /* Enable wrapping */
+  min-height: 0px;
+  
+  padding-top: 5px;
+ 
+ 
  
 }
 
@@ -12,10 +17,20 @@
   margin: 10px;
   background-color: #ccc;
   text-align: center;
+ 
+}
+.fixed-container{
+  height: 100px;
+  padding: 20px;
+}
+
+.contend-wrapper{
+  display: flex;
+  
 }
 
 .body-container p {
-  font-size: 24px;
+  font-size: 18px;
   
   
 

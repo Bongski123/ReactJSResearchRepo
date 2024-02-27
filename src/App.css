@@ -81,7 +81,6 @@ h3
 }
 
 
-
 .form-control{
  
   margin: 0%;/* Center the container horizontally */
@@ -104,17 +103,6 @@ h3
     margin-left: 5px;
 }
 
-
-
-
-.buttonUpload{
-  color: #4e36ef;
-  border: #d31111;
-
-}
-.uploadTitle{
-  color: rgb(21, 141, 137);
-}
 .Home{
   background-color: transparent;
   height: 70vh;

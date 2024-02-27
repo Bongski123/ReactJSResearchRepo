@@ -6,21 +6,15 @@
   color: #333;
   background-color: #ffb996;
   width: 100vw;
-  flex: 1;
-
- 
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 200px;
+  
 }
 
-.container {
-  max-width: 1200px; /* Limit the maximum width of the container */
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 0 20px; /* Add some padding to the sides */
-}
+
 
 @media screen and (max-width: 768px) {
   .container {
@@ -29,9 +23,14 @@
 }
 
 .home {
-  background-color: #6bfff3;
+  background-color: #81ff85;
   margin: auto;
-  
+  font-family: 'Times New Roman', Times, serif;
+
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .products {
@@ -39,7 +38,7 @@
 }
 
 .about {
-  background-color: #fdffab;
+  background-color: #81ff85;
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
   position: absolute;
@@ -48,7 +47,7 @@
 }
 .register{
  
-  background-color: #fdffab;
+  background-color: #81ff85;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     position: absolute;
@@ -58,19 +57,20 @@
 
 
 .contact {
-  background-color: #ffcf81;
+  background-color: #81ff85;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .education {
   background-color: #81ff85;
+  font-family: 'Times New Roman', Times, serif;
 }
-.publication {
-    background-color: #81ff85;
-  }
+
   
 
 .upload{
-  background-color: #a781ff;
+  background-color: #81ff85;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /** Products page */
@@ -97,7 +97,37 @@
   transform: translate(-50%, -50%);
   background-color: #ffcf81;
 }
+.publication{
+  overflow-y:scroll;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #81ff85;
+  flex: 1;
+  justify-content:center;
+  margin: auto;/* Center the container horizontally */
 
+  
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 6%;
+
+}
+.API{
+  overflow-y:visible;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #81ff85;
+  flex: 1;
+  justify-content:center;
+  margin: auto;/* Center the container horizontally */
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  padding-top: 8%;
+
+  font-size: calc(4px + 2vmin);
+}
 
 .signup-form{
   margin: auto;/* Center the container horizontally */
@@ -107,39 +137,29 @@
   flex-direction: column;
   padding: 2rem;
   padding-top: 1%;
-
   font-size: calc(4px + 2vmin);
+
 
 }
 .form-label{
-  font-size:21px;
+  font-size:10px;
 }
 
-.userlist-table{
- 
-  margin: auto;/* Center the container horizontally */
-  height: 1px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  padding-top: 1%;
-  font-size: calc(4px + 2vmin);
-
-
-}
 
 .publication-form{
  
+  overflow-y:visible;
+  font-family: 'Times New Roman', Times, serif;
+  flex: 1;
+  justify-content:center;
   margin: auto;/* Center the container horizontally */
-  height: 1px;
+  height: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  padding-top: 1%;
+  padding-top: 0%;
 
-  font-size: calc(4px + 2vmin);
+  font-size: calc(5px + 1vmin);
 
 }
 .files-form{
@@ -182,7 +202,8 @@ width: 100%;
 
 .form-control{
   width: 100%;
-  font-size: calc(4px + 1vmin);
+  font-size: calc(5px + 1vmin);
+
 
 }
 .regform{
@@ -190,5 +211,62 @@ width: 100%;
   height: 80px;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
+  padding-top: 20%;
 }
+
+
+
+.upload{
+  color:rgb(0, 0, 0);
+  background-color: #81ff85;
+  overflow-y: 1;
+  box-sizing: border-box;
+
+}
+
+
+.image-container {
+  flex: 1;
+  height: 100%;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  padding-top: 0%;
+}
+.text-container {
+  flex: 2;
+  align-items: center;
+  width: 50%;
+  text-align: justify;
+}
+.image-container1{
+  flex: 1;
+  height: 100%;
+  width: 50%;
+  padding-bottom: 20px;
+  padding-left: 80px;
+}
+.text-container1{
+  flex: 2;
+  align-items: center;
+  width: 50%; 
+  text-align: justify;
+  text-indent: 0%;
+  margin-bottom: 20px;
+}
+
+.round-container {
+  border-radius: 20%; /* Create a round shape */
+  flex: 1;
+  height: auto;
+  width: 90%;
+  padding-bottom: 20px;
+  padding-left: 80px;
+  padding-top: 60px;
+  
+}
+ 
+
+
+
+

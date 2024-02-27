@@ -1,7 +1,8 @@
 .title-container {
   overflow: hidden;
-  margin-top: 100px;
+  margin-top: 20px;
   margin-bottom: 30px;
+  padding-top: 0%;
 }
 
 .title-container h1 {

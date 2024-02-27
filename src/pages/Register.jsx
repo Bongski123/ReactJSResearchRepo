@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import bcrypt from 'bcryptjs'; // Import bcryptjs for hashing passwords
 import { Title } from "../components/Title/Title";
 import { Body } from "../components/Body/Body";
 import { Alert } from 'react-bootstrap';
@@ -26,50 +25,43 @@ function Register() {
     e.preventDefault();
 
     try {
-      // Hash password before sending to backend
-      const hashedPassword = await bcrypt.hash(password, 10);
-
       const res = await axios.post('http://127.0.0.1:9000/api/registerUser', {
         name,
         user_id,
         email,
-        password: hashedPassword,
-        role_id // Include role_id in the object being sent
+        password,
+        role_id 
       });
 
       setMsg(   
-              
-              
         <Alert variant="success">
-        <Alert.Heading>Succesfuly Registered</Alert.Heading>
-        
-        <hr />
-      </Alert>);// User registered successfully
+          <Alert.Heading>Successfully Registered</Alert.Heading>
+          <hr />
+        </Alert>
+      );
     } catch (err) {
       console.error(err.response.data.error);
     }
   };
 
   return (
-    
-    <div  className='register page' >
-  <h2> Registration</h2>
-       <Body>
-     
-      <form className='regform' onSubmit={handleSubmit}>
-      <label className="form-label">Name</label>
+    <div className='register page'>
+      <Title>Registration</Title>
+      <Body>
+        {msg}
+        <form className='regform' onSubmit={handleSubmit}>
+          <label className="form-label">Name</label>
+          <input
+            type="text"
+            placeholder="Name"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            required
+          />
+        <label className="form-label">User_id</label>
         <input
-          type="text"
-          
-          placeholder="Name"
-          name="name"
-          value={name}
-          onChange={handleChange}
-          required
-        />
-         <label className="form-label">User_id</label>
-        <input
-          type="text"
+          type="user_id"
           placeholder="User ID"
           name="user_id"
           value={user_id}
@@ -104,10 +96,8 @@ function Register() {
           onChange={handleChange}
           required
         />
-           <button  variant="primary" type="button" className="btn btn-primary btn-lg" onClick={handleSubmit} style={{marginTop: '30px',width: '40%' ,margin: 'auto'}}>Uploads</button>
-          <h1 style={{fontSize: '15px', textAlign: 'center', marginTop: '50px'}}>{msg}</h1>
-
-      </form>
+          <button variant="primary" type="button" className="btn btn-primary btn-lg" onClick={handleSubmit} style={{marginTop: '20px', width: '40%', margin: 'auto'}}>Submit</button>
+        </form>
       </Body>
     </div>
   );

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-
+import {FaPhone} from "react-icons/fa";
+import {FaEnvelope} from "react-icons/fa";
 import "./styles.css";
 import { Title } from "../components/Title/Title";
 import { Body } from "../components/Body/Body";
@@ -8,9 +9,15 @@ const Contact = () => {
   return (
     <div className="page contact">
       <Title delay={0.75}>Contact</Title>
+      
+   
       <Body delay={0.75}>
-       Phone: 0929-242-6393 <br/><br/>
-       Email: aalmario@gbox.ncf.edu.ph
+    
+        
+      <FaPhone id = "phone-icon" />
+       0929-242-6393 
+       <FaEnvelope id = "email-icon" />
+       aalmario@gbox.ncf.edu.ph
       </Body>
       <motion.div
         initial={{ y: "-100%" }}

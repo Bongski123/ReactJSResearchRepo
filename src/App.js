@@ -30,9 +30,14 @@ import Attachments from './pages/Attachments'
 
 function App() {
   return (
+
+    
     <Router>
+      
       <div className="App">
+        
         <Navbar variant="dark" />
+        
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/home" element={<Home />} />
