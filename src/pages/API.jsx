@@ -21,7 +21,7 @@ const API = () => {
     },[])
 
     const fetchPosts = async () => {
-        await axios.get('http://127.0.0.1:9000/api/users').then(({data})=>{
+        await axios.get('https://almariobackendnodejs.onrender.com/api/users').then(({data})=>{
             setPosts(data)
 
         })

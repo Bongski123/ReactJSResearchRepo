@@ -25,7 +25,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://127.0.0.1:9000/api/registerUser', {
+      const res = await axios.post('https://almariobackendnodejs.onrender.com/api/register', {
         name,
         user_id,
         email,
