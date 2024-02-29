@@ -11,6 +11,7 @@ body {
   flex: 1;
   min-height: 0px;
   
+  
 
 }
 
@@ -20,11 +21,6 @@ code {
 }
 
 
-*{
-
-  margin: 0px;
-  padding: 0px;
-}
 
 
 

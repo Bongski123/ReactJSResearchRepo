@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  
+
 
 }
 
@@ -130,3 +130,7 @@ h3
   background-color: #ccc;
   text-align: center;
 }
+.App {
+  position: relative;
+}
+

@@ -21,7 +21,7 @@ const API = () => {
     },[])
 
     const fetchPosts = async () => {
-        await axios.get('https://almariobackendnodejs.onrender.com/api/users').then(({data})=>{
+        await axios.get('https://jsonplaceholder.typicode.com/posts').then(({data})=>{
             setPosts(data)
 
         })
@@ -41,12 +41,11 @@ const API = () => {
       <thead>
         <tr>
         
-          <th>id</th>
-          <th>name</th>
-          <th>user_id</th>
-          <th>email</th>
-          <th>Role</th>
-          <th>Action </th>
+          <th>UserId</th>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Body</th>
+       
           
         </tr>
       </thead>
@@ -55,17 +54,12 @@ const API = () => {
        {posts.length > 0 &&
     posts.map((row, key) => (
       <tr key={key}>
+        <td>{row.userId}</td>
         <td>{row.id}</td>
-        <td>{row.name}</td>
-        <td>{row.user_id}</td>
-        <td>{row.email}</td>
-        <td>{row.role_name}</td>
-        <td>
-        <Button variant="primary">Edit</Button>{' '} 
-        <Button variant="outline-danger">Delete</Button>{''}
-
-        </td>
-      
+        <td>{row.title}</td>
+        <td>{row.body}</td>
+        
+    
       </tr>
     ))}
       </tbody>

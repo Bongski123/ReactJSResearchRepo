@@ -14,10 +14,7 @@ const About = () => {
       <Container>
         <Row>
           <Col xs={12} md={6}>
-            <div className="image-container">
-              {/* Set a specific width for the image to make it smaller */}
-              <Image src={myphoto} style={{ width: '100%', maxWidth: '500px' , height: 'auto'}} rounded />
-            </div>
+            
           </Col>
           <Col xs={12} md={6}>
             <div className="text-container">

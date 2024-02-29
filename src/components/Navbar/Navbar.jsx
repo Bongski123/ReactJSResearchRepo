@@ -6,7 +6,9 @@ import "./Navbar.css";
 
 export const Navbar = () => {
   return (
+    
     <nav className="navbar">
+   
       <ul>
         <li>
           <Link to="/home">Home</Link>
@@ -23,15 +25,9 @@ export const Navbar = () => {
         <li>
           <Link to="/api">API</Link>
         </li>
-        <li>
-          <Link to="/uploadfiles">Upload</Link>
-        </li>
-        <li>
-          <Link to="/publicationlist">Publication</Link>
-        </li>
-        <li>
-          <Link to="/register">Sign up</Link>
-        </li>
+     
+  
+        
       </ul>
       
 

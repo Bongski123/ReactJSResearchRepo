@@ -27,7 +27,7 @@ import UploadFiles from "./pages/UploadFiles";
 import { AnimatePresence } from "framer-motion";
 import PublicationList from './pages/PublicationList';
 import Attachments from './pages/Attachments'
-
+import logo from './image/logonav.jpg'
 function App() {
   return (
 
@@ -35,8 +35,18 @@ function App() {
     <Router>
       
       <div className="App">
+      
         
+      <div className="bgphoto" style={{ width: '100%', position: 'fixed'}}/>
+{/* 
+
         <Navbar variant="dark" />
+        <div className="logo-container">
+        <Link to="/home">
+          <img src={logo} alt="Logo" className="logo" />
+        </Link>
+      </div>
+         */}
         
         <AnimatePresence mode="wait">
           <Routes>

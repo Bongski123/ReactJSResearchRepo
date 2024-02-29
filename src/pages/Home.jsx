@@ -10,13 +10,10 @@ const Home = () => {
   return (
     
     <div className="page home"  >
-      <Title>NCF Research Nexus</Title>
+      <Title>Hello I'm Nhel</Title>
      
       <div className="Home">
-    <div className="searchbar-container">
-    <SearchBar setResults ={setResults}/>
-    <SearchResultList results ={results}/>
-  </div>
+  
   </div>
 
     </div>

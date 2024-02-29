@@ -13,6 +13,7 @@ const UploadFiles = () => {
     const [citation, setCitation] = useState("");
     const [file, setFile] = useState();
     const [id, setID] = useState("");
+    
     const [msg, setMsg] = useState("");
 
     const upload = () => {
@@ -24,6 +25,7 @@ const UploadFiles = () => {
         formData.append("citation", citation);
         formData.append('file', file);
         formData.append("id", id);
+        
         axios.post('https://almariobackendnodejs.onrender.com/create',formData )
         .then((response) => {
             console.log(response);
