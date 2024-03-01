@@ -100,8 +100,6 @@ const Dashboard = () => {
     </Sidebar>
   </div>
             <Content />
-       
-       
     
                 Welcome User: {user? user.user_id: 'id'} {user? user.name: 'name'}
                 <Button variant ="danger" onClick={handleLogout}>Logout</Button>
