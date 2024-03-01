@@ -43,38 +43,28 @@ const Dashboard = () => {
     return (
         <>
             <div className="dashboard">
-                <Body>
-                    <div style={{ display: 'flex', height: '100%' }}>
-                        <Sidebar>
-                            <Menu
-                                menuItemStyles={{
-                                    button: ({ level, active, disabled }) => {
-                                        // only apply styles on first level elements of the tree
-                                        if (level === 0)
-                                            return {
-                                            
-                                              
-                                            };
-                                    },
-                                }}
-                            >
-                              Welcome : {user ? user.user_id : 'id'} {user ? user.name : 'name'}
-                                <SubMenu defaultOpen label="Welcome!" icon={<Icon name="bar-chart" />}>
-                                    <MenuItem> <button variant="danger" onClick={handleLogout}>Logout</button></MenuItem>
-                                   
-                                </SubMenu>
-                                {/* <MenuItem active icon={<Icon name="calendar" />}>
-                                    Calendar (active)
-                                </MenuItem>
-                                <MenuItem icon={<Icon name="service" />}> Examples</MenuItem> */}
-                            </Menu>
-                        </Sidebar>
+                <Body style={{ height: '100vh', overflow: 'hidden' }}>
+                    <div style={{ display: 'flex', height: '50%' }}>
+                        <div style={{ marginLeft: 1200, marginRight: 0 ,marginBottom: 500  }}>
+                            <Sidebar>
+                                <Menu
+                                    menuItemStyles={{
+                                        button: ({ level, active, disabled }) => {
+                                            // only apply styles on first level elements of the tree
+                                            if (level === 0)
+                                                return {};
+                                        },
+                                    }}
+                                >
+                                    <MenuItem> Welcome : {user ? user.user_id : 'id'} {user ? user.name : 'name'} </MenuItem>
+                                    <SubMenu defaultOpen label="Welcome!" icon={<Icon name="bar-chart" />}>
+                                        <MenuItem> <Button variant="danger" onClick={handleLogout}>Logout</Button> </MenuItem>
+                                    </SubMenu>
+                                </Menu>
+                            </Sidebar>
+                        </div>
                     </div>
-                    <Content />
-                    <div>
-                        
-                        <button variant="danger" onClick={handleLogout}>Logout</button>
-                    </div>
+                    <Content style={{ height: '100%', overflow: 'auto' }} />
                 </Body>
             </div>
         </>

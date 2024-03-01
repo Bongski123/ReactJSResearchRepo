@@ -4,7 +4,7 @@ import {FaEnvelope} from "react-icons/fa";
 import "./styles.css";
 import { Title } from "../components/Title/Title";
 import { Body } from "../components/Body/Body";
-
+import Navbar from "../components/Navbar/Navbar";
 const Contact = () => {
   return (
     <div className="page contact">
@@ -41,8 +41,11 @@ const Contact = () => {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="circle"
       />
+         <Navbar />
     </div>
+    
   );
+  
 };
 
 export default Contact;

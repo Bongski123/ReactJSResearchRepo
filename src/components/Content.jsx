@@ -1,10 +1,13 @@
 import React from 'react';
-
+import { Body } from './Body/Body';
+import { Title } from './Title/Title';
 const Content = () => {
     return (
         <div className="content">
-            <h2>Welcome to Your Dashboard</h2>
-            <p>This is your user dashboard. You can see your profile information, update settings, and more.</p>
+          <Title>  Welcome to Your Dashboard</Title>
+        
+           
+           
         </div>
     );
 }

@@ -8,7 +8,7 @@ import { Button } from 'semantic-ui-react'
 import Carousel from 'react-bootstrap/Carousel';
 import { useState, useEffect } from 'react';
 import  Table  from 'react-bootstrap/Table';
-
+import Navbar from "../components/Navbar/Navbar";
 
 
 
@@ -77,8 +77,11 @@ const PublicationList = () => {
         </div>
 
       </Body>
+      <Navbar />
     </div>
+
   );
+  
 };
 
 export default PublicationList;

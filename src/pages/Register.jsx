@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Title } from "../components/Title/Title";
 import { Body } from "../components/Body/Body";
 import { Alert } from 'react-bootstrap';
+import Navbar from '../components/Navbar/Navbar';
+
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -99,6 +101,7 @@ function Register() {
           <button variant="primary" type="button" className="btn btn-primary btn-lg" onClick={handleSubmit} style={{marginTop: '20px', width: '40%', margin: 'auto'}}>Submit</button>
         </form>
       </Body>
+      <Navbar />
     </div>
   );
 }

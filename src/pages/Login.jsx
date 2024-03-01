@@ -6,7 +6,7 @@ import jwtDecode from 'jwt-decode'; // Corrected import statement
 import { Body } from '../components/Body/Body';
 import "./styles.css";
 import { Title } from '../components/Title/Title';
-
+import Navbar from '../components/Navbar/Navbar';
 const Login = () => {
     const navigate = useNavigate();
     const [user_id, setUserID] = useState('');
@@ -44,7 +44,9 @@ const Login = () => {
                     </Col>
                 </Row>
             </div>
+            <Navbar />
         </Body>
+        
     );
 }
 

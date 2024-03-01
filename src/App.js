@@ -71,7 +71,7 @@ function App() {
             <Route path='/dashboard' element={<Dashboard/>}/> 
           </Routes>
         </AnimatePresence>
-        <Navbar />
+      
       </div>
     </Router>
   );

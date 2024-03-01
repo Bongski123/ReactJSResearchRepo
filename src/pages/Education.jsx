@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import myphoto from '../image/logoschool.png';
 import "./styles.css"; // Import your CSS file for styling
 import { Body } from '../components/Body/Body';
-
+import Navbar from '../components/Navbar/Navbar';
 const Education = () => {
   return (
 
@@ -39,7 +39,9 @@ const Education = () => {
           </Col>
         </Row>
       </Container>
+    
       </Body>
+      <Navbar />
     </div>
   );
 };

@@ -384,15 +384,33 @@ body {
 }
 
 .content {
-  margin-left: 250px;
-  padding: 20px;
+padding-left: 400px;
+  
+  
 }
 
 .content h2 {
-  color: #333;
+  color: #ff0000;
+  font-family: cursive;
+   margin-bottom: 20px;
 }
 
 .content p {
   color: #666;
   line-height: 1.5;
+}
+
+.dashboard {
+  background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../image//BG14.jpg");
+  font-family: cursive;
+  
+}
+
+.content p{
+  color: #007bff;
 }

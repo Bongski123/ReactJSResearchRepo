@@ -4,7 +4,7 @@ import { Body } from "../components/Body/Body";
 import React, { useState } from 'react';
 import { SearchBar } from '../components/SearchBar';
 import { SearchResultList } from '../components/SearchResultList';
-
+import Navbar from "../components/Navbar/Navbar";
 const Home = () => {
     const [results,setResults] = useState([]);
   return (
@@ -15,6 +15,7 @@ const Home = () => {
   
   </div>
 
+  <Navbar />
     </div>
   );
 };

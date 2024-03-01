@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import myphoto from '../image/myphoto.jpg';
 import "./styles.css"; // Import your CSS file for styling
-
+import Navbar from '../components/Navbar/Navbar';
 const About = () => {
   return (
     <div className="page about">
@@ -33,7 +33,9 @@ const About = () => {
           </Col>
         </Row>
       </Container>
+      <Navbar />
     </div>
+    
   );
 };
 
