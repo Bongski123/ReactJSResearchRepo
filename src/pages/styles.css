@@ -406,8 +406,13 @@ padding-left: 400px;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../image//BG14.jpg");
+  background-image: url("../image//BG18.gif");
   font-family: cursive;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw; /* Set the width to 100% of viewport width */
+  height: 100vh; /* Set the height to 100% of viewport height */
 
 }
 
