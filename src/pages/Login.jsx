@@ -39,7 +39,7 @@ const Login = () => {
                          
                             <input type="user_id" value={user_id} onChange={(e) => setUserID(e.target.value)} placeholder="User Id" />
                             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-                            <Button variant="primary" className='buttons' onClick={handleLogin}>Login</Button>
+                            <Button variant="danger" className='buttons' onClick={handleLogin}>Login</Button>
                         </div>
                     </Col>
                 </Row>
