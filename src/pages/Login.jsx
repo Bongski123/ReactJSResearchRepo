@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Row, Col, Button } from 'react-bootstrap'; // Importing only necessary components from react-bootstrap
-import jwtDecode from 'jwt-decode'; // Corrected import statement
+import { Row, Col, Button } from 'react-bootstrap';
+import jwtDecode from 'jwt-decode'; 
 import { Body } from '../components/Body/Body';
 import "./styles.css";
 import { Title } from '../components/Title/Title';

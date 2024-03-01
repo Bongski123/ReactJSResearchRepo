@@ -69,6 +69,7 @@ const API = () => {
       </Body>
       <Navbar />
     </div>
+    
   );
 };
 
