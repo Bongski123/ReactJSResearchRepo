@@ -45,7 +45,7 @@ const Dashboard = () => {
             <div className="dashboard">
                 <Body style={{ height: '100vh', overflow: 'hidden' }}>
                     <div style={{ display: 'flex', height: '50%' }}>
-                        <div style={{ marginLeft: 1200, marginRight: 0 ,marginBottom: 500  }}>
+                        <div style={{ marginLeft: 1200, marginRight: 0 ,marginBottom: 400  }}>
                             <Sidebar>
                                 <Menu
                                     menuItemStyles={{

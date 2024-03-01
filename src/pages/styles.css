@@ -385,7 +385,7 @@ body {
 
 .content {
 padding-left: 400px;
-  
+
   
 }
 
@@ -408,9 +408,6 @@ padding-left: 400px;
   height: 100vh;
   background-image: url("../image//BG14.jpg");
   font-family: cursive;
-  
+
 }
 
-.content p{
-  color: #007bff;
-}
