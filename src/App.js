@@ -17,17 +17,21 @@ import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Register from './pages/Register';
 import Aboutme from './Aboutme';
-import Login from './Login';
+
 import { Carousel } from './Carousel';
 import { NavDropdown } from 'react-bootstrap';
 import { Navbar } from './components/Navbar/Navbar';
 import React, { useState } from "react"
-import UserDashboard from "./UserDashboard";
+
 import UploadFiles from "./pages/UploadFiles";
 import { AnimatePresence } from "framer-motion";
 import PublicationList from './pages/PublicationList';
 import Attachments from './pages/Attachments'
 import logo from './image/logonav.jpg'
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+
+
 function App() {
   return (
 
@@ -56,12 +60,15 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/register" element={<Register />} />
             <Route path="/api" element={<API />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/aboutme" element={<Aboutme />} />
             <Route path="/uploadfiles" element={<UploadFiles />} />
-            <Route path="/userdashboard" element={<UserDashboard />} />
+        
+        
             <Route path="/publicationlist" element={<PublicationList />} />
             <Route path="/attachments" element={<Attachments />} />
+            <Route path='/' element={<Login/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/dashboard' element={<Dashboard/>}/> 
           </Routes>
         </AnimatePresence>
         <Navbar />

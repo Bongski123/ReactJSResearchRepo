@@ -11,7 +11,6 @@ const Home = () => {
     
     <div className="page home"  >
       <Title>Hello I'm Nhel</Title>
-     
       <div className="Home">
   
   </div>

@@ -297,4 +297,102 @@ width: 100%;
 
 
 
+.container-login {
+  padding-left:5rem;
+  padding-bottom: 2rem;
+  background-image: url("../image/BG13.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw; /* Set the width to 100% of viewport width */
+  height: 100vh; /* Set the height to 100% of viewport height */
+  color: rgb(0, 0, 0);
+}
 
+
+.login-form {
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px #f5eeee;
+  width: 300px; /* Adjust the width of the form as needed */
+  margin: 0 auto; /* Set left and right margin to auto to center the form horizontally */
+ 
+}
+
+
+
+.login-form input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.buttons {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #1e0101;
+  cursor: pointer;
+}
+
+.buttons:hover {
+  background-color: #0056b3;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidebar h2 {
+  color: #fff;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  color: #ccc;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.content h2 {
+  color: #333;
+}
+
+.content p {
+  color: #666;
+  line-height: 1.5;
+}

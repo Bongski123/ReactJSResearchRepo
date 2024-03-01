@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NavDropdown } from 'react-bootstrap';
 
+import { Dropdown } from "react-bootstrap";
 import "./Navbar.css";
 
 export const Navbar = () => {
@@ -25,6 +25,17 @@ export const Navbar = () => {
         <li>
           <Link to="/api">API</Link>
         </li>
+
+        <Dropdown>
+      <Dropdown.Toggle  className="dropdown-nav">
+      <Link to="/Login">Sign in</Link>
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="/register">Sign Up</Dropdown.Item>
+      
+      </Dropdown.Menu>
+    </Dropdown>
      
   
         
