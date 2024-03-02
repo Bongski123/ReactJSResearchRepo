@@ -29,20 +29,16 @@
 }
 
 .container {
-    margin-top: 20px;
+    margin-top: 10px;
+    padding-top: 2rem;
   }
   
   
   
-  .table-container {
-    width: 100%;
-    overflow-x: auto; /* Enable horizontal scrolling */
-  }
-  
+
   .Table {
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+ 
   }
   
   .Table th,

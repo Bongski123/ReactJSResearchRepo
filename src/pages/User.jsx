@@ -1,338 +1,257 @@
-import React, {useEffect , useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import  Button  from 'react-bootstrap/Button';
-
-import  Modal  from 'react-bootstrap/Modal';
-import { ModalBody } from 'react-bootstrap';
-import ModalFooter from 'react-bootstrap';
-import { Table } from 'semantic-ui-react';
+import { Modal, Button, Form, Table } from 'react-bootstrap';
 import Swal from 'sweetalert2';
-import { Form } from 'react-bootstrap';
-import {Row }from 'react-bootstrap';
-import {Col} from 'react-bootstrap';
-import './User.css'
-import CloseButton from 'react-bootstrap';
-import userEvent from '@testing-library/user-event';
-import { FaTrashAlt } from "react-icons/fa";
-import { Icon } from '@mui/material';
 import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 import { CiRead } from "react-icons/ci";
-
-const User = () =>{
-
-    
-    const [users ,setUsers] = useState([]);
+import "./User.css"
+const User = () => {
+    const [users, setUsers] = useState([]);
+    const [show, setShow] = useState(false);
+    const [showReadModal, setShowReadModal] = useState(false); // New state for the read-only modal
+   
+    const [selectedUser, setSelectedUser] = useState(null);
+    const [formData, setFormData] = useState({
+        name: '',
+        user_id: '',
+        email: '',
+        password: '',
+        role_id: '',
+    });
 
     const user = JSON.parse(localStorage.getItem('token'));
     const token = user.data.token;
-
-
     const headers = {
         accept: 'application/json',
-        Autorization: token
-    }
-
-
-
-    useEffect(()=>{
-        fetchUsers()
-
-    },[])
-
-
+        Authorization: token,
+    };
 
     const fetchUsers = async () => {
-        await axios.get('https://almariobackendnodejs.onrender.com/api/users', { headers: headers}).then(({data})=>{
-            setUsers(data)
-        })
-    }
+        try {
+            const response = await axios.get('https://almariobackendnodejs.onrender.com/api/users', { headers });
+            setUsers(response.data);
+        } catch (error) {
+            console.error('Error fetching users:', error);
+        }
+    };
 
+    useEffect(() => {
+        fetchUsers();
+    }, [fetchUsers]); // Include fetchUsers in the dependency array
 
-    const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
-    const[name , setName] = useState("")
-    const[user_id , setUserID] = useState("")
-    const[email, setUserEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [role_id, setRoleId] = useState("")
-    const [validationError , setValidationError] = useState({})
+    const handleShow = (user) => {
+        setSelectedUser(user);
+        if (user) {
+            setFormData({
+                name: user.name,
+                user_id: user.user_id,
+                email: user.email,
+                password: user.password,
+                role_id: user.role_id,
+            });
+        } else {
+            setFormData({
+                name: '',
+                user_id: '',
+                email: '',
+                password: '',
+                role_id: '',
+            });
+        }
+        setShow(true);
+    };
 
-    const creatProduct = async (e) => {
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
+    const handleCreateSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(name);
-        console.log(user_id);
-        console.log(email);
-        console.log(password);
-        console.log(role_id);
-
-        const formData = new FormData()
-
-        formData.append('name',name)
-        formData.append('user_id',user_id)
-        formData.append('email',email)
-        formData.append('password',password)
-        formData.append('role_id',role_id)
-
-        await axios.post('https://nodejs-mysql-api-almario-ylza.onrender.com/api/register', {name , user_id,email,password,role_id}, {headers:headers}).then(({data})=>{
+        try {
+            await axios.post('https://nodejs-mysql-api-almario-ylza.onrender.com/api/register', formData, { headers });
             Swal.fire({
-                icon:"success",
-                text:data.message
-            })
+                icon: 'success',
+                text: 'User created successfully!',
+            }).then(() => {
+                fetchUsers();
+               
+            });
+        } catch (error) {
+            console.error('Error creating user:', error);
+            Swal.fire({
+                icon: 'error',
+                text: 'An error occurred while creating user.',
+            });
+        }
+    };
 
-            fetchUsers();
-        }).catch(({response})=>{
-            if(response.status ===422){
-                setValidationError(response.data.errors)
-            }else{
-                Swal.fire({
-                    text:response.data.message,
-                    icon:"error"
-                })
-            }
-        })
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-
-    }
-
+        try {
+            await axios.put(`https://nodejs-mysql-api-almario-ylza.onrender.com/api/user/${selectedUser.id}`, formData, { headers });
+            Swal.fire({
+                icon: 'success',
+                text: 'User updated successfully!',
+            });
+           
+         
+        } catch (error) {
+            console.error('Error updating user:', error);
+            Swal.fire({
+                icon: 'error',
+                text: 'An error occurred while updating user.',
+            });
+        }
+    };
 
     const deleteProduct = async (id) => {
-
-        const isConfirm= await Swal.fire({
+        const isConfirm = await Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
-            icon:'warning',
+            icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes ,Delete it!'
-        }).then((result)=> {
-            return result.isConfirmed
+            confirmButtonText: 'Yes, Delete it!'
+        }).then((result) => {
+            return result.isConfirmed;
         });
-        if(!isConfirm){
+        if (!isConfirm) {
             return;
         }
 
-        await axios.delete(`https://nodejs-mysql-api-almario-ylza.onrender.com/api/user/${id}`, {headers:headers}).then(({data})=>{
+        await axios.delete(`https://nodejs-mysql-api-almario-ylza.onrender.com/api/user/${id}`, { headers: headers }).then(({ data }) => {
             Swal.fire({
-                icon:'success',
-                text: "Succesfully Deleted"
-            })
-            fetchUsers()
-        }).catch(({response:{data}})=>{
-            Swal.fire({
-               text:data.message,
-               icon:"error"
-            })
-        })
-
-
-
-
-
-    }
-
-
-    const updateUser = async (e) => {
-
-      
-
-        console.log(name);
-        console.log(user_id);
-        console.log(email);
-        console.log(password);
-        
-
-        const formData = new FormData()
-
-        formData.append('name',name)
-        formData.append('user_id',user_id)
-        formData.append('email',email)
-        formData.append('password',password)
-  
-
-        await axios.put('https://nodejs-mysql-api-almario-ylza.onrender.com/api/user', {name , user_id,email,password}, {headers:headers}).then(({data})=>{
-            Swal.fire({
-                icon:"update succesfuly",
-                text:data.message
-            })
-
+                icon: 'success',
+                text: "Successfully Deleted"
+            });
             fetchUsers();
-        }).catch(({response})=>{
-            if(response.status ===422){
-                setValidationError(response.data.errors)
-            }else{
-                Swal.fire({
-                    text:response.data.message,
-                    icon:"error"
-                })
-            }
-        })
+        }).catch(({ response: { data } }) => {
+            Swal.fire({
+                text: data.message,
+                icon: "error"
+            });
+        });
+    };
+    const handleReadModalShow = (user) => {
+        setSelectedUser(user);
+        setShowReadModal(true);
+    };
 
+    const handleReadModalClose = () => {
+        setShowReadModal(false);
+    };
 
-    }
-
-
-
-
-
-
-
-
-
-    return(
-
+    return (
         <>
-        <div className='container'><br/>
-          <div className='col-12'>
-            <Button variant='btn btn-success mb-2 float-end btn-sm me-2' onClick={handleShow}>Create User</Button>
-            </div>
-
-            <Table className='table-container' striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>name</th>
-                        <th>user_id</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Action</th>
-                 
-                    </tr>
-                </thead>
-                
-                <tbody>
-
-                    {
-                        users.length > 0 &&(
-                            users.slice(0 ,10).map((row, key)=>(
-                                <tr key={key}>
-                                    <td>{row.id}</td>
-                                    <td>{row.name}</td>
-                                    <td>{row.user_id}</td>
-                                    <td>{row.email}</td>
-                                    <td>{row.role_name}</td>
+            <div className='container'>
+                <br />
+                <div className='col-12'>
+                    <Button variant='btn btn-success mb-2 float-end btn-sm me-2' onClick={() => handleShow(null)}>
+                        Create User
+                    </Button>
+                </div>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>User ID</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.length > 0 &&
+                            users.slice(0, 10).map((user, index) => (
+                                <tr key={index}>
+                                    <td>{user.id}</td>
+                                    <td>{user.name}</td>
+                                    <td>{user.user_id}</td>
+                                    <td>{user.email}</td>
+                                    <td>{user.role_name}</td>
                                     <td>
-
-                                        <Button className='btn btn-danger btn-md' onClick={()=>deleteProduct(row.id)}>
-                                        <FaTrashAlt />
+                                        <Button className='btn btn-danger btn-md' onClick={() => deleteProduct(user.id)}>
+                                            <MdDelete />
                                         </Button>
-                                        
-                                        <Button className='btn btn-success btn-md'  onClick={()=>updateUser(row.id)}>
-                                        <FaEdit />
+                                        <Button className='btn btn-primary btn-md ms-2' onClick={() => handleShow(user)}>
+                                            <FaEdit />
                                         </Button>
-
-                                        <Button className='btn btn-secondary btn-md'  onClick={()=>creatProduct(row.id)}>
+                                        <Button className='btn btn-primary btn-md ms-2' onClick={() => handleReadModalShow(user)}>
                                         <CiRead />
                                         </Button>
-                                    
-                                    
                                     </td>
-                                  
                                 </tr>
-                        ))
-                        )
+                            ))}
+                    </tbody>
+                </Table>
+            </div>
 
-                    }
-             
-                </tbody>
-            </Table>
-
-          </div>
-
-          <Modal show={show} onHide={handleClose}>
-
-            <Modal.Header closeButton>
-                <Modal.Title>Create User</Modal.Title>
-            </Modal.Header>
-
-            <Modal.Body>
-
-                <Form onSubmit={creatProduct}>
-                    <Row>
-                        <Col>
-                        <Form.Group controlId='Name'>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{selectedUser ? 'Update User' : 'Create User'}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form onSubmit={selectedUser ? handleSubmit : handleCreateSubmit}>
+                        <Form.Group controlId='name'>
                             <Form.Label>Name</Form.Label>
-                            <Form.Control type='text' value={name} onChange={(event) =>{setName(event.target.value)}}/>
+                            <Form.Control type='text' name='name' value={formData.name} onChange={handleChange} />
                         </Form.Group>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
                         <Form.Group controlId='user_id'>
-                            <Form.Label>User_id</Form.Label>
-                            <Form.Control type='text' value={user_id} onChange={(event) =>{setUserID(event.target.value)}}/>
+                            <Form.Label>User ID</Form.Label>
+                            <Form.Control type='text' name='user_id' value={formData.user_id} onChange={handleChange} />
                         </Form.Group>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                        <Form.Group controlId='Email'>
+                        <Form.Group controlId='email'>
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type='text' value={email} onChange={(event) =>{setUserEmail(event.target.value)}}/>
+                            <Form.Control type='text' name='email' value={formData.email} onChange={handleChange} />
                         </Form.Group>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col>
-                        <Form.Group controlId='Password'>
+                        <Form.Group controlId='password'>
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type='text' value={password} onChange={(event) =>{setPassword(event.target.value)}}/>
+                            <Form.Control type='password' name='password' value={formData.password} onChange={handleChange} />
                         </Form.Group>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col>
-                        <Form.Group controlId='Role'>
-                            <Form.Label>Role_id</Form.Label>
-                            <Form.Control type='text' value={role_id} onChange={(event) =>{setRoleId(event.target.value)}}/>
+                        <Form.Group controlId='role_id'>
+                            <Form.Label>Role ID</Form.Label>
+                            <Form.Control type='text' name='role_id' value={formData.role_id} onChange={handleChange} />
                         </Form.Group>
-                        </Col>
-                    </Row>
+                        <Button variant='success' type='submit'>
+                            {selectedUser ? 'Update User' : 'Create User'}
+                        </Button>
+                    </Form>
+                </Modal.Body>
+            </Modal>
 
-                    <Button variant='success' className='mt-2' size='sm' block="block" type='submit'>Submit</Button>
-
-                </Form>
-         
-            </Modal.Body>
-
-
-          </Modal>
-
-
-  
-
-
-
-
-
-
-       
-        
-        
-        
-        
-        
+              {/* Read-only modal */}
+              <Modal show={showReadModal} onHide={handleReadModalClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>User Details</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {selectedUser && (
+                        <div>
+                            <p><strong>Name:</strong> {selectedUser.name}</p>
+                            <p><strong>User ID:</strong> {selectedUser.user_id}</p>
+                            <p><strong>Email:</strong> {selectedUser.email}</p>
+                            <p><strong>password:</strong> {selectedUser.password}</p>
+                            <p><strong>Role:</strong> {selectedUser.role_name}</p>
+                        </div>
+                    )}
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleReadModalClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
-
-
-
     );
+};
 
-
-
-
-
-
-
-
-
-}
 
 
 export default User;
