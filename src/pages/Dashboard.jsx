@@ -43,7 +43,10 @@ const Dashboard = () => {
     return (
         <>
             <div className="dashboard">
+                
+
                 <Body style={{ height: '100vh', overflow: 'hidden' }}>
+                <Content style={{ height: '20%', overflow: 'auto' }} />
                     <div style={{ display: 'flex', height: '50%' }}>
                         <div style={{ marginLeft: 1200, marginRight: 0 ,marginBottom: 400  }}>
                             <Sidebar>
@@ -64,7 +67,7 @@ const Dashboard = () => {
                             </Sidebar>
                         </div>
                     </div>
-                    <Content style={{ height: '100%', overflow: 'auto' }} />
+                   
                 </Body>
             </div>
         </>

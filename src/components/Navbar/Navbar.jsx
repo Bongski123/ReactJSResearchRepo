@@ -26,7 +26,7 @@ export const Navbar = () => {
           <Link to="/api">API</Link>
         </li>
 
-        <Dropdown>
+        <Dropdown className="dropdwon">
       <Dropdown.Toggle  className="dropdown-nav">
       <Link to="/Login">Sign in</Link>
       </Dropdown.Toggle>
