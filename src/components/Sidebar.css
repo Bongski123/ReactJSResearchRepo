@@ -1,0 +1,49 @@
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .light .app {
+    background-color: #f0f0f0;
+  }
+  
+  .dark .app {
+    background-color: #333;
+    color: white;
+  }
+  
+  .sidebar-content {
+    background-color: #fff;
+    width: 200px;
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu > li {
+    padding: 10px;
+  }
+  
+  .submenu {
+    list-style: none;
+    padding-left: 20px;
+  }
+  
+  .toggle-sidebar,
+  .toggle-theme {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  

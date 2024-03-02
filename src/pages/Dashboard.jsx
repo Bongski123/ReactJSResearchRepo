@@ -10,6 +10,8 @@ import { Icon } from 'semantic-ui-react';
 import Content from '../components/Content';
 import "bootstrap/dist/css/bootstrap.css";
 import "./styles.css";
+import User from './User';
+import { Title } from '../components/Title/Title';
 
 const Dashboard = () => {
     const navigate = useNavigate();
@@ -43,32 +45,32 @@ const Dashboard = () => {
     return (
         <>
             <div className="dashboard">
-                
+          
 
-                <Body style={{ height: '100vh', overflow: 'hidden' }}>
-                <Content style={{ height: '20%', overflow: 'auto' }} />
-                    <div style={{ display: 'flex', height: '50%' }}>
-                        <div style={{ marginLeft: 1200, marginRight: 0 ,marginBottom: 400  }}>
-                            <Sidebar>
-                                <Menu
-                                    menuItemStyles={{
-                                        button: ({ level, active, disabled }) => {
-                                            // only apply styles on first level elements of the tree
-                                            if (level === 0)
-                                                return {};
-                                        },
-                                    }}
-                                >
+                <Body >
+             
+                    <div className='DASHBOARD' style={{ display: 'flex', height: '20%' }}>
+                        <Navbar.Brand className='brand'>MY DASHBOARD</Navbar.Brand>
+                
+               
+                                <Menu>
                                     <MenuItem> Welcome : {user ? user.user_id : 'id'} {user ? user.name : 'name'} </MenuItem>
                                     <SubMenu defaultOpen label="Welcome!" icon={<Icon name="bar-chart" />}>
-                                        <MenuItem> <Button variant="danger" onClick={handleLogout}>Logout</Button> </MenuItem>
+                                        <MenuItem> <Button className='button-logout' variant="danger" onClick={handleLogout}>Logout</Button> </MenuItem>
                                     </SubMenu>
                                 </Menu>
-                            </Sidebar>
-                        </div>
+                      
+                          
                     </div>
+                 
+                {<User/>}
+            
                    
                 </Body>
+           
+            </div>
+            <div>
+                
             </div>
         </>
     );

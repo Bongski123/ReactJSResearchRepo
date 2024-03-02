@@ -57,12 +57,10 @@
 }
 .register{
  
-
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     position: absolute;
     background-image: url("../image//BG17.jpg");
-    
   
   }
 
@@ -236,11 +234,12 @@ width: 100%;
 }
 .regform{
   margin: auto;/* Center the container horizontally */
-  height: 80px;
+  height: 85px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column; 
   padding-top: 20%;
+  border-radius: 10px;
 }
 
 
@@ -408,13 +407,71 @@ padding-left: 400px;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../image//BG18.gif");
+  background-image: url("../image//BG-17.jpg");
   font-family: cursive;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100vw; /* Set the width to 100% of viewport width */
-  height: 100vh; /* Set the height to 100% of viewport height */
+   height: 100vh; 
 
+ } 
+
+ .dashboard menu{
+  background-color:transparent;
+ }
+ .regform input{
+  width: 100%;
+  margin-bottom: 4px;
+  padding: 5px;
+  border: 1px solid #88e7ff;
+  border-radius: 10px;
+ }
+ .register-form {
+
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px 0px #f5eeee;
+  width: 400px; /* Adjust the width of the form as needed */
+  margin: 0 auto; /* Set left and right margin to auto to center the form horizontally */
+
+}
+
+.nav-container {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left edge */
+  align-items: center; /* Center items vertically */
+  color: #333;
+  width: 100vw; /* Set width to 100% of the viewport width */
+  padding: 10px; /* Add padding if needed */
+  background-color: #007bff; /* Set background color */
+}
+
+.Nav{
+  justify-content: flex-start;
+  color: #333;
+  
+}
+.DASHBOARD{
+
+  justify-content: flex-end; /* Align items to the left edge */
+  align-items: center; /* Center items vertically */
+  color: #333;
+  width: 100vw; /* Set width to 100% of the viewport width */
+  padding: 10px; /* Add padding if needed */
+  background-color: transparent; /* Set background color */
+ padding-top: 1.5rem;
+}
+.brand{
+  justify-content: flex-start; /* Align items to the left edge */
+  padding: 10px; /* Add padding if needed */
+  width: 100vw; /* Set width to 100% of the viewport width */ 
+  display: flex;
+  font-size: 50px;
+}
+.button-logout{
+  border: none;
+  background-color: #ff0000;
+ 
 }
 

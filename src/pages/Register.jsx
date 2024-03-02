@@ -4,7 +4,7 @@ import { Title } from "../components/Title/Title";
 import { Body } from "../components/Body/Body";
 import { Alert } from 'react-bootstrap';
 import Navbar from '../components/Navbar/Navbar';
-
+import { Row, Col, Button } from 'react-bootstrap';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -48,19 +48,15 @@ function Register() {
 
   return (
     <div className='register page'>
-      <Title>Registration</Title>
+     
+
       <Body>
         {msg}
         <form className='regform' onSubmit={handleSubmit}>
           <label className="form-label">Name</label>
+          <div className='register-form'>
           <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={handleChange}
-            required
-          />
+           className='input-css' type="text" placeholder="Name"name="name" value={name}onChange={handleChange}required/>
         <label className="form-label">User_id</label>
         <input
           type="user_id"
@@ -98,9 +94,11 @@ function Register() {
           onChange={handleChange}
           required
         />
+        </div>
           <button variant="primary" type="button" className="btn btn-primary btn-lg" onClick={handleSubmit} style={{marginTop: '20px', width: '40%', margin: 'auto'}}>Submit</button>
         </form>
       </Body>
+ 
       <Navbar />
     </div>
   );

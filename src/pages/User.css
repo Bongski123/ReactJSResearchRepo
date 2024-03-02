@@ -1,0 +1,105 @@
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0); /* Text color */
+    box-shadow: 10px;
+    border-radius: 10px; /* Border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow */
+   
+}
+
+.modal-content {
+    background-color: rgb(255, 127, 127); /* Transparent background */
+    border:#f5eeee; /* No border */
+    box-shadow: 0px 0px 20px 0px #f5eeee;
+}
+
+.modal-header {
+    border-bottom: none; /* No border */
+}
+
+.modal-body {
+    padding: 20px; /* Padding */
+}
+
+.modal-footer {
+    border-top: none; /* No border */
+    padding: 20px; /* Padding */
+}
+
+.container {
+    margin-top: 20px;
+  }
+  
+  
+  
+  .table-container {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+  }
+  
+  .Table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .Table th,
+  .Table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .Table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .Table td {
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  
+  .Table tbody tr:hover {
+    background-color: #e9ecef;
+  }
+  
+  .Button {
+    padding: 6px 12px;
+    margin-right: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    
+  }
+  
+  .btn-secondary {
+    background-color: #5028a7;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
