@@ -220,7 +220,7 @@ const User = () => {
                     <Form.Select name='role_id' value={formData.role_name} onChange={handleChange}>
                         <option value=''>Select Role</option>
                         {users.map((role) => (
-                            <option key={role.role_name} value={role.role_name}>
+                            <option key={role.name} value={role.role_id}>
                                 {role.role_name}
                             </option>
                         ))}

@@ -10,9 +10,11 @@
 }
 
 .modal-content {
-    background-color: rgb(255, 127, 127); /* Transparent background */
+    background-color: rgb(119, 196, 196); /* Transparent background */
     border:#f5eeee; /* No border */
     box-shadow: 0px 0px 20px 0px #f5eeee;
+    font-family: cursive;
+  
 }
 
 .modal-header {
@@ -27,6 +29,22 @@
     border-top: none; /* No border */
     padding: 20px; /* Padding */
 }
+
+.modal-title{
+  font-size: 40px;
+  font-weight: 300px;
+  font-weight: bold;
+}
+
+.form-label{
+  color: #050b11;
+  font-family: cursive;
+  font-weight: 300px;
+  font-weight: bold;
+}
+
+
+
 
 .container {
     margin-top: 10px;
