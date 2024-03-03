@@ -5,8 +5,13 @@ import { Row, Col, Button } from 'react-bootstrap';
 import jwtDecode from 'jwt-decode'; 
 import { Body } from '../components/Body/Body';
 import "./styles.css";
-import { Title } from '../components/Title/Title';
+import {Title} from '../components/Title/Title'
 import Navbar from '../components/Navbar/Navbar';
+import { FaRegUser } from "react-icons/fa";
+import { FaUnlockKeyhole } from "react-icons/fa6";
+
+
+
 const Login = () => {
     const navigate = useNavigate();
     const [user_id, setUserID] = useState('');
@@ -27,27 +32,39 @@ const Login = () => {
     };
 
     return (
+       
         <Body>
-            
             <div className='container-login'>
-                
-                <Row className="justify-content-center align-items-center h-100">
-                    
-                    <Col md={6} xs={12}>
-                    <Title>Log In</Title>
-                        <div className="login-form">
-                         
-                            <input type="user_id" value={user_id} onChange={(e) => setUserID(e.target.value)} placeholder="User Id" />
-                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-                            <Button variant="danger" className='buttons' onClick={handleLogin}>Login</Button>
-                        </div>
-                    </Col>
-                </Row>
-            </div>
-            <Navbar />
-        </Body>
             
+        <Col md={6} xs={12}>
+            <Title>Log In</Title>
+            <div className="login-form">
+                <FaRegUser style={{ position: 'absolute', top: '43%', transform: 'translateY(-10%)', left: '632px' }} />
+                <input 
+                    type="user_id" 
+                    value={user_id} 
+                    onChange={(e) => setUserID(e.target.value)}   
+                    placeholder="User Id" 
+                    style={{ paddingLeft: '60px' }} // Adjust padding to accommodate the icon
+                />
+               <FaUnlockKeyhole style={{ position: 'absolute', top: '52%', transform: 'translateY(-10%)', left: '632px' }}  />
+                <input 
+                    type="password" 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    placeholder="Password" 
+                    style={{ paddingLeft: '60px' }} // Adjust padding to accommodate the icon
+                />
+                
+                <Button variant="danger" className='buttons' onClick={handleLogin}>Login</Button>
+            </div>
+        </Col>
+        
+        </div>
+        <Navbar/>
+        </Body>
+        
     );
-}
+};
 
 export default Login;
