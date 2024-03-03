@@ -149,106 +149,114 @@ const User = () => {
 
     return (
         <>
-            <div className='container'>
-                <br />
-                <div className='col-12'>
-                    <Button variant='btn btn-success mb-2 float-end btn-sm me-2' onClick={() => handleShow(null)}>
-                        Create User
-                    </Button>
-                </div>
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>User ID</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Action</th>
+    <div className='container'>
+        <br />
+        <div className='col-12'>
+            <Button variant='btn btn-success mb-2 float-end btn-sm me-2' onClick={() => handleShow(null)}>
+                Create User
+            </Button>
+        </div>
+        <Table striped bordered hover>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>User ID</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {users.length > 0 &&
+                    users.slice(0, 10).map((user, index) => (
+                        <tr key={index}>
+                            <td>{user.id}</td>
+                            <td>{user.name}</td>
+                            <td>{user.user_id}</td>
+                            <td>{user.email}</td>
+                            <td>{user.role_name}</td>
+                            <td>
+                                <Button className='btn btn-danger btn-md' onClick={() => deleteProduct(user.id)}>
+                                    <MdDelete />
+                                </Button>
+                                <Button className='btn btn-primary btn-md ms-2' onClick={() => handleShow(user)}>
+                                    <FaEdit />
+                                </Button>
+                                <Button className='btn btn-primary btn-md ms-2' onClick={() => handleReadModalShow(user)}>
+                                    <CiRead />
+                                </Button>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {users.length > 0 &&
-                            users.slice(0, 10).map((user, index) => (
-                                <tr key={index}>
-                                    <td>{user.id}</td>
-                                    <td>{user.name}</td>
-                                    <td>{user.user_id}</td>
-                                    <td>{user.email}</td>
-                                    <td>{user.role_name}</td>
-                                    <td>
-                                        <Button className='btn btn-danger btn-md' onClick={() => deleteProduct(user.id)}>
-                                            <MdDelete />
-                                        </Button>
-                                        <Button className='btn btn-primary btn-md ms-2' onClick={() => handleShow(user)}>
-                                            <FaEdit />
-                                        </Button>
-                                        <Button className='btn btn-primary btn-md ms-2' onClick={() => handleReadModalShow(user)}>
-                                        <CiRead />
-                                        </Button>
-                                    </td>
-                                </tr>
-                            ))}
-                    </tbody>
-                </Table>
-            </div>
+                    ))}
+            </tbody>
+        </Table>
+    </div>
 
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{selectedUser ? 'Update User' : 'Create User'}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Form onSubmit={selectedUser ? handleSubmit : handleCreateSubmit}>
-                        <Form.Group controlId='name'>
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control type='text' name='name' value={formData.name} onChange={handleChange} />
-                        </Form.Group>
-                        <Form.Group controlId='user_id'>
-                            <Form.Label>User ID</Form.Label>
-                            <Form.Control type='text' name='user_id' value={formData.user_id} onChange={handleChange} />
-                        </Form.Group>
-                        <Form.Group controlId='email'>
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type='text' name='email' value={formData.email} onChange={handleChange} />
-                        </Form.Group>
-                        <Form.Group controlId='password'>
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type='password' name='password' value={formData.password} onChange={handleChange} />
-                        </Form.Group>
-                        <Form.Group controlId='role_id'>
-                            <Form.Label>Role ID</Form.Label>
-                            <Form.Control type='text' name='role_id' value={formData.role_id} onChange={handleChange} />
-                        </Form.Group>
-                        <Button variant='success' type='submit'>
-                            {selectedUser ? 'Update User' : 'Create User'}
-                        </Button>
-                    </Form>
-                </Modal.Body>
-            </Modal>
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+            <Modal.Title>{selectedUser ? 'Update User' : 'Create User'}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <Form onSubmit={selectedUser ? handleSubmit : handleCreateSubmit}>
+                <Form.Group controlId='name'>
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control type='text' name='name' value={formData.name} onChange={handleChange} />
+                </Form.Group>
+                <Form.Group controlId='user_id'>
+                    <Form.Label>User ID</Form.Label>
+                    <Form.Control type='text' name='user_id' value={formData.user_id} onChange={handleChange} />
+                </Form.Group>
+                <Form.Group controlId='email'>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type='text' name='email' value={formData.email} onChange={handleChange} />
+                </Form.Group>
+                <Form.Group controlId='password'>
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type='password' name='password' value={formData.password} onChange={handleChange} />
+                </Form.Group>
+                <Form.Group controlId='role_id'>
+                    <Form.Label>Role ID</Form.Label>
+                    <Form.Select name='role_id' value={formData.role_name} onChange={handleChange}>
+                        <option value=''>Select Role</option>
+                        {users.map((role) => (
+                            <option key={role.role_name} value={role.role_name}>
+                                {role.role_name}
+                            </option>
+                        ))}
+                    </Form.Select>
+                </Form.Group>
+                <Button variant='success' type='submit'>
+                    {selectedUser ? 'Update User' : 'Create User'}
+                </Button>
+            </Form>
+        </Modal.Body>
+    </Modal>
 
-              {/* Read-only modal */}
-              <Modal show={showReadModal} onHide={handleReadModalClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>User Details</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    {selectedUser && (
-                        <div>
-                            <p><strong>Name:</strong> {selectedUser.name}</p>
-                            <p><strong>User ID:</strong> {selectedUser.user_id}</p>
-                            <p><strong>Email:</strong> {selectedUser.email}</p>
-                            <p><strong>password:</strong> {selectedUser.password}</p>
-                            <p><strong>Role:</strong> {selectedUser.role_name}</p>
-                        </div>
-                    )}
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleReadModalClose}>
-                        Close
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-        </>
+    {/* Read-only modal */}
+    <Modal show={showReadModal} onHide={handleReadModalClose}>
+        <Modal.Header closeButton>
+            <Modal.Title>User Details</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            {selectedUser && (
+                <div>
+                    <p><strong>Name:</strong> {selectedUser.name}</p>
+                    <p><strong>User ID:</strong> {selectedUser.user_id}</p>
+                    <p><strong>Email:</strong> {selectedUser.email}</p>
+                    <p><strong>Password:</strong> {selectedUser.password}</p>
+                    <p><strong>Role:</strong> {selectedUser.role_name}</p>
+                </div>
+            )}
+        </Modal.Body>
+        <Modal.Footer>
+            <Button variant="secondary" onClick={handleReadModalClose}>
+                Close
+            </Button>
+        </Modal.Footer>
+    </Modal>
+</>
+
     );
 };
 
