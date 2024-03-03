@@ -8,6 +8,7 @@ import { CiRead } from "react-icons/ci";
 import "./User.css"
 const User = () => {
     const [users, setUsers] = useState([]);
+    const [roles, setRoles] = useState([]);
     const [show, setShow] = useState(false);
     const [showReadModal, setShowReadModal] = useState(false); // New state for the read-only modal
    
@@ -35,9 +36,19 @@ const User = () => {
             console.error('Error fetching users:', error);
         }
     };
+    const fetchRoles = async () => {
+        try {
+            const response = await axios.get('https://almariobackendnodejs.onrender.com/api/roles');
+            setRoles(response.data);
+        } catch (error) {
+            console.error('Error fetching roles:', error);
+        }
+    };
+
 
     useEffect(() => {
         fetchUsers();
+        fetchRoles();
     }, [fetchUsers]); // Include fetchUsers in the dependency array
 
     const handleClose = () => setShow(false);
@@ -219,8 +230,8 @@ const User = () => {
                     <Form.Label>Role ID</Form.Label>
                     <Form.Select name='role_id' value={formData.role_name} onChange={handleChange}>
                         <option value=''>Select Role</option>
-                        {users.map((role) => (
-                            <option key={role.name} value={role.role_id}>
+                        {roles.map((role) => (
+                            <option key={role.role_id} value={role.role_id}>
                                 {role.role_name}
                             </option>
                         ))}
