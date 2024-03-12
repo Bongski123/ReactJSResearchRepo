@@ -2,7 +2,7 @@
   padding: 50px;
   position: fixed;
   top: 0; /* Align to the top of the screen */
-  right: 0; /* Align to the right side of the screen */
+  left: 0; /* Align to the right side of the screen */
   z-index: 100;
   background-color: transparent;
   flex: 1;
@@ -24,10 +24,10 @@
 
 .navbar a {
   text-decoration: none;
-  color: rgb(255, 53, 53);
+  color: rgb(255, 255, 255);
   font-weight: bolder;
-  font-family: cursive;
- font-size: larger;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ font-size: 25;
 
 }
 
@@ -41,4 +41,11 @@
   background-color:transparent;
  border: none;
  
+}
+
+.navbar h2{
+  color: rgb(255, 255, 255);
+  padding-bottom: 35px;
+
+  margin: auto;
 }

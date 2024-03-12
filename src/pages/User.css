@@ -6,23 +6,26 @@
     box-shadow: 10px;
     border-radius: 10px; /* Border radius */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow */
+    
    
 }
 
 .modal-content {
-    background-color: rgb(119, 196, 196); /* Transparent background */
-    border:#f5eeee; /* No border */
-    box-shadow: 0px 0px 20px 0px #f5eeee;
-    font-family: cursive;
+    background-color: rgb(165, 189, 160); /* Transparent background */
+    border:#269612; /* No border */
+    box-shadow: 0px 0px 20px 0px #0af3ff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   
 }
 
 .modal-header {
     border-bottom: none; /* No border */
+    
 }
 
 .modal-body {
     padding: 20px; /* Padding */
+    
 }
 
 .modal-footer {
@@ -38,47 +41,58 @@
 
 .form-label{
   color: #050b11;
-  font-family: cursive;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: 300px;
   font-weight: bold;
 }
-
-
+.form-control{
+  border-radius: 10px;
+  
+}
 
 
 .container {
-    margin-top: 10px;
-    padding-top: 2rem;
+  max-height: 380px; /* Set the maximum height of the container */
+  overflow: auto; /* Add overflow scroll */
+  
   }
   
   
   
 
-  .Table {
-    width: 100%;
  
-  }
   
   .Table th,
   .Table td {
-    padding: 8px;
+    padding: 10px;
     text-align: left;
+    border-bottom: 1px solid #ddd; /* Add bottom border to cells */
+  
   }
   
   .Table th {
-    background-color: #007bff;
-    color: white;
+    background-color: #f2f2f2; /* Header background color */
+  color: #333; /* Header text color */
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Ensure the header is above the table body */
   }
   
   .Table td {
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 5px solid #051320;
+    
   }
   
+  .Table tr{
+    background-color: #dc3545;
+    
+  }
   
   .Table tbody tr:hover {
-    background-color: #e9ecef;
+    background-color: #0a243e;
+    
   }
-  
+
   .Button {
     padding: 6px 12px;
     margin-right: 5px;
@@ -87,7 +101,7 @@
   }
   
   .btn-success {
-    background-color: #28a745;
+    background-color:  rgb(27, 92, 11);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -95,7 +109,7 @@
   }
   
   .btn-secondary {
-    background-color: #5028a7;
+    background-color: #310b83;
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -107,7 +121,7 @@
   }
   
   .btn-danger {
-    background-color: #dc3545;
+    background-color: #b70012;
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -116,4 +130,10 @@
   .btn-danger:hover {
     background-color: #c82333;
   }
+  .custom-table {
+    background-color: rgb(246, 40, 40);
+  }
   
+  .modal-90w {
+    max-width: 30vw; /* Set the maximum width */
+}

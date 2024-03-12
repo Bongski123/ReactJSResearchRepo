@@ -44,7 +44,7 @@ const UploadFiles = () => {
     return (
         <div className="page upload">
             {msg}
-            <Title>Upload Publication</Title>
+          
             <Body>
                 <div className="upload-Form">
                     <div className="col-19">

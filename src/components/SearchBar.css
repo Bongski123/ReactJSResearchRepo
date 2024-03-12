@@ -25,3 +25,10 @@ input:focus{
 #search-icon{
     color: green;
 }
+.search-button{
+    color: burlywood;
+  
+    border: #10465a;
+    border-radius: 10px;
+    padding: 3px;
+}

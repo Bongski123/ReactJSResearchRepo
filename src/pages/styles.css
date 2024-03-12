@@ -4,7 +4,7 @@
   padding-left: 20px;
   padding-right: 20px;
   color: #333;
-  background-color: #ffb996;
+  background-color: #224115;
   width: 100vw;
   margin: auto;
   display: flex;
@@ -26,7 +26,7 @@
   
  
   font-family: 'Times New Roman', Times, serif;
- background-image: url("../image//BG13.png");
+ background-image: url("../image//repoBG.png");
  background-size:cover;
   background-position: center;
   width: 100%;
@@ -60,7 +60,7 @@
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     position: absolute;
-    background-image: url("../image//BG17.jpg");
+ 
   
   }
 
@@ -183,11 +183,6 @@
   box-sizing: border-box;
  
 
-  
- 
-
-  
-
 }
 .files-form{
   margin: auto;/* Center the container horizontally */
@@ -235,11 +230,10 @@ width: 100%;
 .regform{
   margin: auto;/* Center the container horizontally */
   height: 85px;
-  box-sizing: border-box;
+
   display: flex;
   flex-direction: column; 
-  padding-top: 20%;
-  border-radius: 10px;
+
 }
 
 
@@ -302,7 +296,7 @@ width: 100%;
   padding-left:30rem;
   padding-top: 10rem;
   padding-bottom: 2rem;
-  background-image: url("../image/BG13.png");
+  background-image: url("../image/repoBG.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -313,10 +307,11 @@ width: 100%;
 
 
 .login-form {
-  background-color: #000000;
+  background-color: #ffffff;
   padding: 20px;
+
   border-radius: 20px;
-  box-shadow: 0px 0px 20px 0px #f5eeee;
+  box-shadow: 0px 0px 30px 0px #2f01fa;
   width: 300px; /* Adjust the width of the form as needed */
   margin: 0 auto; /* Set left and right margin to auto to center the form horizontally */
   
@@ -337,13 +332,13 @@ width: 100%;
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #ff0000;
-  color: #1e0101;
+  background-color: #24491f;
+
   cursor: pointer;
 }
 
 .buttons:hover {
-  background-color: #b30000;
+  background-color: #00b315;
 }
 body {
   margin: 0;
@@ -351,39 +346,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.sidebar {
-  height: 100%;
-  width: 250px;
-  background-color: #1b0f0f;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
 
-.sidebar h2 {
-  color: #fff;
-  text-align: center;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  padding: 10px;
-}
-
-.sidebar ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.sidebar ul li a:hover {
-  color: #ccc;
-}
 
 .content {
 padding-left: 400px;
@@ -398,18 +361,18 @@ padding-left: 400px;
 }
 
 .content p {
-  color: #666;
+  color: #d15757;
   line-height: 1.5;
 }
 
 .dashboard {
-  background-color: #007bff;
+  background-color: #01240f;
+
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../image//BG-17.jpg");
-  font-family: cursive;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -445,6 +408,7 @@ padding-left: 400px;
   color: #333;
   width: 100vw; /* Set width to 100% of the viewport width */
   padding: 10px; /* Add padding if needed */
+  
   background-color: #007bff; /* Set background color */
 }
 
@@ -457,11 +421,14 @@ padding-left: 400px;
 
   justify-content: flex-end; /* Align items to the left edge */
   align-items: center; /* Center items vertically */
-  color: #333;
+  color: #000000;
   width: 100vw; /* Set width to 100% of the viewport width */
   padding: 10px; /* Add padding if needed */
   background-color: transparent; /* Set background color */
  padding-top: 1.5rem;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+
 }
 .brand{
   justify-content: flex-start; /* Align items to the left edge */
@@ -471,10 +438,45 @@ padding-left: 400px;
   font-size: 50px;
   padding-left: 150px;
   padding-bottom:100px ;
+ font-family: serif;
 }
 .button-logout{
   border: none;
-  background-color: #ff0000;
+ 
+ 
+}
+.user{
+  width: 100px;
+}
+.navbar-left{
+  font-family: serif;
+  font-size: 20px;
+}
+.dashboard-brand{
+  font-size: 50px;
+  font-family: serif;
+  color: #000000;
+  
+
+}
+.dashboard-nav{
+  width: 100%;
+}
+.DD-dashboard{
+ align-items: flex-end;
+}
+.nav-text{
+  color: #ffffff;
+}
+.chart-container {
+  
+  width:80%;
+  margin: auto;
+  height: 300px;  
  
 }
 
+.btn-modal{
+  width: 2px;
+  margin: auto;
+}

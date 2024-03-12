@@ -1,6 +1,6 @@
 .title-container {
   overflow: hidden;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 30px;
   padding-top: 0%;
 }
@@ -8,7 +8,7 @@
 .title-container h1 {
   font-size: 50px;
   font-weight: bold;
-  font-family: cursive;
-   color: rgb(255, 0, 0);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   color: rgb(255, 255, 255)
 
 }

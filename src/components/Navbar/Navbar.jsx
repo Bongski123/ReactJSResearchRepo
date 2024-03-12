@@ -8,6 +8,7 @@ export const Navbar = () => {
   return (
     
     <nav className="navbar">
+     <h2>NCF Research Nexus</h2>
    
       <ul>
         <li>
