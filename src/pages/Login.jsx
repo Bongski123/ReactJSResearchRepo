@@ -29,7 +29,7 @@ const Login = () => {
         }
 
         try {
-            const response = await axios.post('https://almariobackendnodejs.onrender.com/api/login', {
+            const response = await axios.post('http://localhost:9000/api/login', {
                 user_id,
                 password,
             });
@@ -49,34 +49,35 @@ const Login = () => {
 
     return (
         <Body>
-            <div className='container-login'>
-                <Col md={6} xs={12}>
-                    <Title>Sign in</Title>
-                    <div className="login-form">
-                        <FaRegUser style={{ position: 'absolute', top: '47%', transform: 'translateY(-10%)', left: '632px' ,display: 'flex' }} />
-                        <input
-                            type="user_id"
-                            value={user_id}
-                            onChange={(e) => setUserID(e.target.value)}
-                            placeholder="User Id"
-                            style={{ paddingLeft: '60px' }} // Adjust padding to accommodate the icon
-                            required  // Make the field required
-                        />
-                        <MdOutlineLockOpen style={{ position: 'absolute', top: '56%', transform: 'translateY(-10%)', left: '632px' }} />
-                        <input
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Password"
-                            style={{ paddingLeft: '60px' }} // Adjust padding to accommodate the icon
-                            required  // Make the field required
-                        />
-                        <Button variant="primary" className='buttons' onClick={handleLogin}>Login</Button>
-                    </div>
-                </Col>
-            </div>
-            <Navbar />
-        </Body>
+        <div className='container-login'>
+            <Col md={6} xs={12}>
+                <Title>Sign in</Title>
+                <div className="login-form" style={{ position: 'relative' }}>
+                    <FaRegUser style={{ position: 'absolute', top: '21%', transform: 'translateY(-50%)', left: '27px', zIndex: '1' }} />
+                    <input
+                        type="user_id"
+                        value={user_id}
+                        onChange={(e) => setUserID(e.target.value)}
+                        placeholder="User Id"
+                        style={{ paddingLeft: '30px' }} // Adjust padding to accommodate the icon
+                        required  // Make the field required
+                    />
+                    <MdOutlineLockOpen style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', left: '27px', zIndex: '1' }} />
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Password"
+                        style={{ paddingLeft: '30px' }} // Adjust padding to accommodate the icon
+                        required  // Make the field required
+                    />
+                    <Button variant="primary" className='buttons' onClick={handleLogin}>Login</Button>
+                </div>
+            </Col>
+        </div>
+        <Navbar />
+    </Body>
+    
     );
 };
 

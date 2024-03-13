@@ -1,15 +1,25 @@
 .navbar {
-  padding: 50px;
+  padding: 1px;
   position: fixed;
   top: 0; /* Align to the top of the screen */
   left: 0; /* Align to the right side of the screen */
   z-index: 100;
   background-color: transparent;
   flex: 1;
+  margin-bottom: 15px;
   
 
 
   
+}
+
+.navbar ul li {
+  margin-right: 10px; /* Add margin between list items */
+}
+
+
+.navbar ul li:last-child {
+  margin-right: 0; /* Remove margin for the last list item */
 }
 
 .navbar ul {
@@ -19,15 +29,23 @@
   justify-content: flex-end;
   gap: 40px;
   color: black;
-
+  padding-top: 20px;
+  padding-left: 580px;
+  
+  top: 0;
+ right: 0;
+ position: sticky;
+ 
 }
 
 .navbar a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: #1E5D39;
   font-weight: bolder;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
  font-size: 25;
+ top: 0;
+ right: 0;
 
 }
 
@@ -48,4 +66,15 @@
   padding-bottom: 35px;
 
   margin: auto;
+}
+
+.nav-image {
+  width: 32%; /* Adjust the width as needed */
+  height: 100%; /* Maintains aspect ratio */
+  margin-right: 10px; /* Adjust spacing as needed */
+
+  margin-bottom: 10px;
+ padding-left: 20px;
+
+
 }

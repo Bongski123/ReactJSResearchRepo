@@ -1,14 +1,16 @@
 .title-container {
   overflow: hidden;
-  margin-top: 50px;
+  margin-top: 2px;
   margin-bottom: 30px;
-  padding-top: 0%;
+  height: auto;
+
+ 
 }
 
 .title-container h1 {
   font-size: 50px;
   font-weight: bold;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   color: rgb(255, 255, 255)
+   color: #1E5D39
 
 }

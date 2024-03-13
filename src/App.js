@@ -17,6 +17,9 @@ import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Register from './pages/Register';
 import Aboutme from './Aboutme';
+import Dashboard from './pages/MainDashboard/index';
+
+
 
 import { Carousel } from './Carousel';
 import { NavDropdown } from 'react-bootstrap';
@@ -27,8 +30,8 @@ import UploadFiles from "./pages/UploadFiles";
 import { AnimatePresence } from "framer-motion";
 import PublicationList from './pages/PublicationList';
 import Attachments from './pages/Attachments'
-import logo from './image/logonav.jpg'
-import Dashboard from './pages/Dashboard';
+
+import SettingPageOnePage from './pages/SettingPageOne';
 import Login from './pages/Login';
 
 
@@ -62,7 +65,7 @@ function App() {
             <Route path="/api" element={<API />} />
             <Route path="/aboutme" element={<Aboutme />} />
             <Route path="/uploadfiles" element={<UploadFiles />} />
-        
+            <Route path="/SettingPageOnePage" element={<SettingPageOnePage />} />
         
             <Route path="/publicationlist" element={<PublicationList />} />
             <Route path="/attachments" element={<Attachments />} />

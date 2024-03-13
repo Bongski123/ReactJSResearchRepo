@@ -4,7 +4,7 @@
   padding-left: 20px;
   padding-right: 20px;
   color: #333;
-  background-color: #224115;
+  background-color: rgb(223, 214, 206);
   width: 100vw;
   margin: auto;
   display: flex;
@@ -24,13 +24,13 @@
 
 .home {
   
- 
+ background-color: rgb(223, 214, 206);
   font-family: 'Times New Roman', Times, serif;
- background-image: url("../image//repoBG.png");
+ /* background-image: url("../image//repoBG.png"); */
  background-size:cover;
   background-position: center;
   width: 100%;
-  height: 96vh;
+  height: 100vh;
 
 
 }
@@ -46,7 +46,7 @@
   position: absolute;
   color: #ffffff;
   font-family: 'Times New Roman', Times, serif;
- background-image: url("../image//aboutmeBG.png");
+ /* background-image: url("../image//aboutmeBG.png"); */
  background-size:cover;
   background-position: center;
   width: 100%;
@@ -68,7 +68,7 @@
 .contact {
 
   font-family: 'Times New Roman', Times, serif;
-  background-image: url("../image//BG14.jpg");
+  /* background-image: url("../image//BG14.jpg"); */
   background-size:cover;
    background-position: center;
    width: 100%;
@@ -81,7 +81,7 @@
  
   font-family: 'Times New Roman', Times, serif;
   font-family: 'Times New Roman', Times, serif;
-  background-image: url("../image//BG16.jpg");
+  /* background-image: url("../image//BG16.jpg"); */
   background-size:cover;
    background-position: center;
    width: 100%;
@@ -121,15 +121,12 @@
 
 }
 .publication{
-  overflow-y:scroll;
+
   font-family: 'Times New Roman', Times, serif;
 
-  flex: 1;
   justify-content:center;
-  margin: auto;/* Center the container horizontally */
-  display: flex;
-  flex-direction: column;
-  padding-top: 6%;
+  font-size: 20px;
+
 
 }
 .API{
@@ -146,7 +143,7 @@
   padding: 2rem;
   padding-top: 8%;
   font-size: calc(4px + 2vmin);
-  background-image: url("../image//BG17.jpg");
+  /* background-image: url("../image//BG17.jpg"); */
   background-size:cover;
    background-position: center;
    width: 100%;
@@ -176,12 +173,38 @@
  
   overflow-y:visible;
   font-family:cursive;
-
+  font-size: 5px;
   justify-content:center;
   margin: auto;/* Center the container horizontally */
   height: 100%;
   box-sizing: border-box;
  
+
+}
+
+.publication-ul{
+ 
+  overflow-y:visible;
+  font-family:cursive;
+  font-size: 15px;
+  justify-content:center;
+  margin: auto;/* Center the container horizontally */
+  height: 100%;
+  box-sizing: border-box;
+ 
+
+}
+
+.titlelist{
+ 
+  overflow-y:visible;
+  font-family:cursive;
+  font-size: 10px;
+  justify-content:center;
+  margin: auto;/* Center the container horizontally */
+  height: 100%;
+  box-sizing: border-box;
+  
 
 }
 .files-form{
@@ -296,7 +319,8 @@ width: 100%;
   padding-left:30rem;
   padding-top: 10rem;
   padding-bottom: 2rem;
-  background-image: url("../image/repoBG.png");
+  background-color: rgb(223, 214, 206);
+  /* background-image: url("../image/repoBG.png"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -307,11 +331,11 @@ width: 100%;
 
 
 .login-form {
-  background-color: #ffffff;
+  background-color:  rgb(223, 214, 206);
   padding: 20px;
 
   border-radius: 20px;
-  box-shadow: 0px 0px 30px 0px #2f01fa;
+  box-shadow: 0px 0px 30px 0px  #195e0c;
   width: 300px; /* Adjust the width of the form as needed */
   margin: 0 auto; /* Set left and right margin to auto to center the form horizontally */
   

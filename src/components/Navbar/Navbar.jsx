@@ -8,15 +8,16 @@ export const Navbar = () => {
   return (
     
     <nav className="navbar">
-     <h2>NCF Research Nexus</h2>
+   <img src="images/ncf-logo.png" alt="Image description" className="nav-image" style={{ width: '450px', height: 'auto' }} />
+     
    
       <ul>
         <li>
           <Link to="/home">Home</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/education">Education</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/about">About</Link>
         </li>
@@ -27,16 +28,12 @@ export const Navbar = () => {
           <Link to="/api">API</Link>
         </li>
 
-        <Dropdown className="dropdwon">
-      <Dropdown.Toggle  className="dropdown-nav">
-      <Link to="/Login">Sign in</Link>
-      </Dropdown.Toggle>
+        <li>  
+           <Link to="/Login">Sign in</Link>
+        </li>
+   
 
-      <Dropdown.Menu>
-        <Dropdown.Item href="/register">Sign Up</Dropdown.Item>
-      
-      </Dropdown.Menu>
-    </Dropdown>
+
      
   
         

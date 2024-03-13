@@ -4,7 +4,7 @@
     border-radius: 10px;
     height: 2.5rem  ;
     padding: 0 15px;
-    box-shadow: 0px 1px 20px #10465a;
+    box-shadow: 0px 1px 20px #195e0c;
     display: flex;
     align-items: center;
     margin: auto;
@@ -28,7 +28,7 @@ input:focus{
 .search-button{
     color: burlywood;
   
-    border: #10465a;
+    border: #236337;
     border-radius: 10px;
     padding: 3px;
 }

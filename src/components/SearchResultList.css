@@ -3,10 +3,11 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 0px 8px #f7aa4b;
+    box-shadow: 0px 0px 8px #1E5D39;
     border-radius: 10px;
     margin-top: 1rem;
     max-height: 300px;
     overflow-y: scroll;
+    cursor: pointer;
 
 }
